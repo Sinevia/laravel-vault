@@ -1,0 +1,32 @@
+{
+    "name": "sinevia/laravel-vault",
+    "type": "library",
+    "description": "A vault implementation for Laravel",
+    "keywords": [
+        "Sinevia",
+        "Laravel",
+        "Entity",
+        "EAV"
+    ],
+    "homepage": "https://github.com/Sinevia/laravel-vault",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Milan Lesichkov",
+            "email": "lesichkovm@gmail.com",
+            "homepage": "http://lesichkov.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "~5.6|~7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sinevia\\Vault\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
