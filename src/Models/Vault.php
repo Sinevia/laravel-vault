@@ -1,8 +1,8 @@
 <?php
 
-namespace Sinevia\Models\Vault;
+namespace Sinevia\Vault\Models;
 
-class Vault extends \App\Models\BaseModel {
+class Vault extends \AdvancedModel {
 
     protected $table = 'snv_vault_vault';
     protected $primaryKey = 'Id';
