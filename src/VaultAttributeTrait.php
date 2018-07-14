@@ -13,7 +13,7 @@ trait VaultAttributeTrait {
     }
 
     private function setVaultAttribute($attributeName, $value) {
-        $vault = Models\Vault::find($this->attributes[$attributeName]);
+        $vault = Models\Vault::find($this->attributes[$attributeName] ?? null);
         if ($vault == null) {
             $vaultId = Models\Vault::storeValue($value, \App\Helpers\App::vaultKey());
             $this->attributes[$attributeName] = $vaultId;
