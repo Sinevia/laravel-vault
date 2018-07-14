@@ -9,17 +9,17 @@ trait VaultAttributeTrait {
         if ($vault == null) {
             return '';
         }
-        return $vault->getValue(\App\Helpers\AppHelper::vaultKey());
+        return $vault->getValue(\App\Helpers\App::vaultKey());
     }
 
     private function setVaultAttribute($attributeName, $value) {
         $vault = Models\Vault::find($this->attributes[$attributeName]);
         if ($vault == null) {
-            $vaultId = Models\Vault::storeValue($value, \App\Helpers\AppHelper::vaultKey());
+            $vaultId = Models\Vault::storeValue($value, \App\Helpers\App::vaultKey());
             $this->attributes[$attributeName] = $vaultId;
             $vault = Models\Vault::find($this->attributes[$attributeName]);
         }
-        return $vault->setValue($value, \App\Helpers\AppHelper::vaultKey());
+        return $vault->setValue($value, \App\Helpers\App::vaultKey());
     }
 
 }
