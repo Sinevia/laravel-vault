@@ -22,18 +22,58 @@ The following schema is used for the database.
 
 ## How to Use ##
 
+### 1. Migrations ###
+
+- 1.1. Add the migration file to your database/migrations directory
+
+```
+<?php
+
+class VaultTablesCreate extends Illuminate\Database\Migrations\Migration {
+
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up() {
+        Sinevia\Vault\Models\Vault::tableCreate();
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down() {        
+        Sinevia\Vault\Models\Vault::tableDelete();
+    }
+
+}
+```
+
+- 1.2. Run the migrations to create the Vault's table
+
+```
+php artisan migrate
+```
+
+
 ### 2. Using Vault Directly ###
+
+- 2.1 Store a value to the vault. If successful, will return the Vault id, that the value was securely stored under
 
 ```
 $vaultId = \Sinevia\Models\Vault::storeValue($value, $password);
 ```
+
+- 2.2 Retrieving the value using the Vault id it was stored under, (see the example above).
 
 ```
 $value = \Sinevia\Model\Vault::retrieveValue($vaultId, $password);
 ```
 
 ### 3. Using Vault with Models ###
-
 
 - 3.1. Vault Key
 
