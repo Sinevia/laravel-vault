@@ -35,4 +35,16 @@ $vaultId = \Sinevia\Models\Vault::storeValue($value, $password);
 $value = \Sinevia\Model\Vault::retrieveValue($vaultId, $password);
 ```
 
-### 2. Using Vault with Models ###
+### 3. Using Vault with Models ###
+
+```
+class ExampleModel {
+
+    use \Sinevia\Vault\VaultAttributeTrait;
+    
+    public function setUsernameAttribute($value) {
+        return $this->setVaultAttribute('Username', $value);
+    }
+}
+```
+
