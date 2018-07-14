@@ -7,7 +7,7 @@ class Vault extends \AdvancedModel {
     protected $table = 'snv_vault_vault';
     protected $primaryKey = 'Id';
     public $incrementing = false;
-    public $useMicroId = true;
+    public $useUniqueId = true;
 
     public static function storeValue($value, $password) {
         $vault = new Vault;
