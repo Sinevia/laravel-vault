@@ -32,8 +32,7 @@ $vaultId = \Sinevia\Models\Vault::storeValue($value, $password);
 ```
 
 ```
-$vault = \Sinevia\Model\Vault::find($vaultId);
-$value = is_null($vault) ? null : $vault->getValue($password);
+$value = \Sinevia\Model\Vault::retrieveValue($vaultId, $password);
 ```
 
 ### 2. Using Vault with Models ###
