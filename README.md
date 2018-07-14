@@ -1,6 +1,6 @@
 # Laravel Vault
 
-Vault - a secure value storage implementation for Laravel. It can be used directly, or attached to Laravel models. When attached to models it stores the values of the attributes securely in the Vault's table. The attributes in the model's table only contain the corresponding identifiers referencing the Vault's table.
+Vault - a secure value storage (data-at-rest) implementation for Laravel. It can be used directly, or attached to Laravel models. When attached to models it stores the values of the attributes securely in the Vault's table. The attributes in the model's table only contain the corresponding identifiers referencing the Vault's table.
 
 ## Installation ##
 
