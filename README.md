@@ -1,6 +1,6 @@
 # Laravel Vault
 
-A secure vault implementation for Laravel.
+A secure vault implementation for Laravel. It can be used directly, or attached to Laravel models. When attached to models it stores the values of the attributes securely in the Vault table. The attributes in the model's table only contain the corresponding Vault identifiers.
 
 ## Installation ##
 
@@ -22,9 +22,6 @@ The following schema is used for the database.
 
 ## How to Use ##
 
-### 1. Vault Key ##
-Create a new class app/Helpers/App with method vaultKey. The function should return a string with the key for securing your values. Do not lose your key, or you will not be able to restore your values
-
 ### 2. Using Vault Directly ###
 
 ```
@@ -36,6 +33,19 @@ $value = \Sinevia\Model\Vault::retrieveValue($vaultId, $password);
 ```
 
 ### 3. Using Vault with Models ###
+
+
+- 3.1. Vault Key
+
+Create a new class app/Helpers/App with method vaultKey. The function should return a string with the key for securing your values. Do not lose your key, or you will not be able to restore your values
+
+- 3.2. Add the VaultAttribute trait to the model
+
+```
+use \Sinevia\Vault\VaultAttributeTrait;
+```
+
+- 3.3. Specify the attributes to be used with Vault
 
 ```
 class ExampleModel {
@@ -50,5 +60,12 @@ class ExampleModel {
         return $this->setVaultAttribute('Username', $value);
     }
 }
+```
+
+- 3.4. Use the vaulted attributes
+
+```
+$exampleModel->Username = 'test';
+$exampleModel->save();
 ```
 
