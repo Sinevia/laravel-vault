@@ -42,6 +42,10 @@ class ExampleModel {
 
     use \Sinevia\Vault\VaultAttributeTrait;
     
+    public function getUsernameAttribute($value) {
+        return $this->getVaultAttribute($value);
+    }
+    
     public function setUsernameAttribute($value) {
         return $this->setVaultAttribute('Username', $value);
     }
