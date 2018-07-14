@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "lesichkovm/laravel-advanced-model": ">=v1.2.0",
+        "lesichkovm/laravel-advanced-model": ">=v1.2.0"
     },
     "autoload": {
         "psr-4": {
