@@ -19,3 +19,21 @@ The following schema is used for the database.
 | CreatedAt | DateTime         |
 | DeletedAt | DateTime         |
 | Udated At | DateTime         |
+
+## How to Use ##
+
+### 1. Vault Key ##
+Create a new class app/Helpers/App with method vaultKey. The function should return a string with the key for securing your values. Do not lose your key, or you will not be able to restore your values
+
+### 2. Using Vault Directly ###
+
+```
+$vaultId = \Sinevia\Models\Vault::storeValue($value, $password);
+```
+
+```
+$vault = \Sinevia\Model\Vault::find($vaultId);
+$value = is_null($vault) ? null : $vault->getValue($password);
+```
+
+### 2. Using Vault with Models ###
