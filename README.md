@@ -12,13 +12,13 @@ composer require sinevia/laravel-vault
 
 The following schema is used for the database.
 
-| Vault    |                  |
+| Vault     |                  |
 |-----------|------------------|
 | Id        | String, UniqueId |
 | Value     | Long Text        |
 | CreatedAt | DateTime         |
 | DeletedAt | DateTime         |
-| Udated At | DateTime         |
+| UpdatedAt | DateTime         |
 
 ## How to Use ##
 
